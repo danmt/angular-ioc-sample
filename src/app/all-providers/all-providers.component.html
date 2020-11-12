@@ -1,0 +1,35 @@
+<section *ngIf="isFacebookEnabled">
+  <header>
+    <h2>Facebook</h2>
+  </header>
+
+  <form [formGroup]="facebookLoginForm" (ngSubmit)="onFacebookLogin()">
+    <label>Username: </label>
+    <input type="text" formControlName="username" />
+    <button type="submit">Log in</button>
+  </form>
+</section>
+
+<section *ngIf="isGithubEnabled">
+  <header>
+    <h2>Github</h2>
+  </header>
+
+  <form [formGroup]="githubLoginForm" (ngSubmit)="onGithubLogin()">
+    <label>Username: </label>
+    <input type="text" formControlName="username" />
+    <button type="submit">Log in</button>
+  </form>
+</section>
+
+<section *ngIf="isGoogleEnabled">
+  <header>
+    <h2>Google</h2>
+  </header>
+
+  <form [formGroup]="googleLoginForm" (ngSubmit)="onGoogleLogin()">
+    <label>Username: </label>
+    <input type="text" formControlName="username" />
+    <button type="submit">Log in</button>
+  </form>
+</section>

@@ -1,0 +1,11 @@
+<section>
+  <header>
+    <h2>Only Facebook</h2>
+  </header>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <label>Username: </label>
+    <input type="text" formControlName="username" />
+    <button type="submit">Log in</button>
+  </form>
+</section>

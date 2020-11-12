@@ -1,18 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot([
+      {
+        path: 'only-facebook',
+        loadChildren: () =>
+          import('./only-facebook/only-facebook.module').then(
+            (m) => m.OnlyFacebookModule
+          ),
+      },
+      {
+        path: 'only-google',
+        loadChildren: () =>
+          import('./only-google/only-google.module').then(
+            (m) => m.OnlyGoogleModule
+          ),
+      },
+      {
+        path: 'all-providers',
+        loadChildren: () =>
+          import('./all-providers/all-providers.module').then(
+            (m) => m.AllProvidersModule
+          ),
+      },
+    ]),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
