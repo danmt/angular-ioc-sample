@@ -12,9 +12,9 @@ export interface AuthProvider {
 
 export interface AuthProvidersMap {
   map: { [k in AuthProviders]: AuthProvider | null };
-  facebookProvider: AuthProvider | null;
-  githubProvider: AuthProvider | null;
-  googleProvider: AuthProvider | null;
+  facebookProvider: AuthProvider;
+  githubProvider: AuthProvider;
+  googleProvider: AuthProvider;
   hasKey: (key: AuthProviders) => boolean;
 }
 
