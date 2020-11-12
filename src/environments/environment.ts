@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
   facebookAuthEnabled: true,
-  googleAuthEnabled: true,
   githubAuthEnabled: true,
+  googleAuthEnabled: true,
+  production: false,
 };
 
 /*
